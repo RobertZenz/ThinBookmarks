@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<prefwindow buttons="accept" id="thintabs-options" resizable="yes"
+	title="Thintabs Options" type="prefwindow"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<prefpane id="thinbookmarks-main-pane" label="Thin Bookmarks Settings">
+		<preferences>
+			<preference id="bookmarksIconHidePreference"
+				name="extensions.org.bonsaimind.thinbookmarks.bookmarks.icon.hide"
+				type="bool" />
+			<preference id="bookmarksTextHidePreference"
+				name="extensions.org.bonsaimind.thinbookmarks.bookmarks.text.hide"
+				type="bool" />
+			<preference id="foldersDropdownHidePreference"
+				name="extensions.org.bonsaimind.thinbookmarks.folders.dropdown.hide"
+				type="bool" />
+			<preference id="foldersIconHidePreference"
+				name="extensions.org.bonsaimind.thinbookmarks.folders.icon.hide"
+				type="bool" />
+			<preference id="foldersTextHidePreference"
+				name="extensions.org.bonsaimind.thinbookmarks.folders.text.hide"
+				type="bool" />
+			<preference id="height"
+				name="extensions.org.bonsaimind.thinbookmarks.height" type="int" />
+			<preference id="itemsIconPaddingBottomPreference"
+				name="extensions.org.bonsaimind.thinbookmarks.items.icon.padding.bottom"
+				type="int" />
+			<preference id="itemsIconPaddingTopPreference"
+				name="extensions.org.bonsaimind.thinbookmarks.items.icon.padding.top"
+				type="int" />
+			<preference id="itemsTextPaddingTopPreference"
+				name="extensions.org.bonsaimind.thinbookmarks.items.text.padding.top"
+				type="int" />
+		</preferences>
+
+		<groupbox orient="vertical">
+			<caption label="Bar" />
+
+			<hbox align="horizontal">
+				<label control="height" value="Height: " />
+				<spacer flex="1" />
+				<tooltip id="tabsHeightTooltip">
+					<label value="Defines the height of the tabs." />
+					<label
+						value="If the icon is squeezed, you'll have to decrease the bottom padding." />
+					<label value="Default value: 24" style="font-weight: bold;" />
+				</tooltip>
+				<textbox type="number" increment="1" preference="height" id="height"
+					tooltip="tabsHeightTooltip" />
+			</hbox>
+		</groupbox>
+
+		<groupbox orient="vertical">
+			<caption label="Items" />
+
+			<hbox align="horizontal">
+				<label control="itemsIconPaddingTop" value="Icon padding top: " />
+				<spacer flex="1" />
+				<tooltip id="itemsIconPaddingTopTooltip">
+					<label
+						value="Defines how much space is between the icon and the top edge." />
+					<label
+						value="If you increase this value, it might happen that the icon is queezed, in that case you need to decrease the bottom padding." />
+					<label value="Default value: -7" style="font-weight: bold;" />
+				</tooltip>
+				<textbox type="number" increment="1" min="-99999999"
+					preference="itemsIconPaddingTopPreference" id="itemsIconPaddingTop"
+					tooltip="itemsIconPaddingTopTooltip" />
+			</hbox>
+			<hbox align="horizontal">
+				<label control="itemsIconPaddingBottom" value="Icon padding bottom: " />
+				<spacer flex="1" />
+				<tooltip id="itemsIconPaddingBottomTooltip">
+					<label
+						value="Defines how much space is between the icon and the bottom edge." />
+					<label
+						value="If the icon of the bookmarks is squeezed, you need to decrease this value." />
+					<label value="Default value: -7" style="font-weight: bold;" />
+				</tooltip>
+				<textbox type="number" increment="1" min="-99999999"
+					preference="itemsIconPaddingBottomPreference" id="itemsIconPaddingBottom"
+					tooltip="itemsIconPaddingBottomTooltip" />
+			</hbox>
+			<hbox align="horizontal">
+				<label control="itemsTextPaddingTop" value="Text padding top: " />
+				<spacer flex="1" />
+				<tooltip id="itemsTextPaddingTopTooltip">
+					<label
+						value="Defines how much space is between the text/sitename and the top edge." />
+					<label value="Default value: -1" style="font-weight: bold;" />
+				</tooltip>
+				<textbox type="number" increment="1" min="-99999999"
+					preference="itemsTextPaddingTopPreference" id="itemsTextPaddingTop"
+					tooltip="itemsTextPaddingTopTooltip" />
+			</hbox>
+		</groupbox>
+
+		<groupbox orient="vertical">
+			<caption label="Bookmarks" />
+
+			<checkbox preference="bookmarksIconHidePreference" id="bookmarksIconHide"
+				label="Hide icon" tooltiptext="Removes the page/site icon from the bookmark in the bar." />
+			<checkbox preference="bookmarksTextHidePreference" id="bookmarksTextHide"
+				label="Hide name" tooltiptext="Removes the page/site name from the bookmark in the bar." />
+		</groupbox>
+
+		<groupbox orient="vertical">
+			<caption label="Folders" />
+
+			<checkbox preference="foldersIconHidePreference" id="foldersIconHide"
+				label="Hide icon" tooltiptext="Removes the folder icon." />
+			<checkbox preference="foldersTextHidePreference" id="foldersTextHide"
+				label="Hide text" tooltiptext="Removes the folder name." />
+			<checkbox preference="foldersDropdownHidePreference" id="foldersDropdownHide"
+				label="Hide dropdown icon" tooltiptext="Removes the page/site icon from the tabs." />
+		</groupbox>
+	</prefpane>
+
+</prefwindow>
