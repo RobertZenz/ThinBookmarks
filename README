@@ -1,0 +1,9 @@
+Thin Bookmarks
+--------------
+
+
+Build
+-----
+
+Run make...or if you don't know what make is, zip the whole src directory and
+change the file ending to xpi.
