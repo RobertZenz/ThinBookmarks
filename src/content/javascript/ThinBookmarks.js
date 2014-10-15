@@ -107,6 +107,17 @@ var ThinBookmarks = {
 				}
 				break;
 			
+			case "dropdown.hideopenallintabs":
+				if (this.preferences.getBoolPref(name)) {
+					DynamicStyleSheets
+							.register(
+									name,
+									"menuitem[label=\"Open All in Tabs\"], menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
+				} else {
+					DynamicStyleSheets.unregister(name);
+				}
+				break;
+			
 			case "dropdown.minwidth":
 				var minimumWidth = this.preferences.getIntPref(name);
 				
@@ -227,6 +238,8 @@ var ThinBookmarks = {
 		defaultPreferences.setBoolPref("bookmarks.text.hide", true);
 		this.refreshPreference("bookmarks.text.hide");
 		
+		defaultPreferences.setBoolPref("dropdown.hideopenallintabs", false);
+		this.refreshPreference("dropdown.hideopenallintabs");
 		defaultPreferences.setIntPref("dropdown.minwidth", 0);
 		this.refreshPreference("dropdown.minwidth");
 		defaultPreferences.setBoolPref("dropdown.scrollbar", false);

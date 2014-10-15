@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 
-<prefwindow buttons="accept" id="thinbookmarks-options" resizable="yes"
-	title="Thin Bookmarks Options" type="prefwindow"
+<prefwindow buttons="accept" id="thinbookmarks-options"
+	resizable="yes" title="Thin Bookmarks Options" type="prefwindow"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<prefpane id="thinbookmarks-main-pane" label="Thin Bookmarks Settings">
@@ -13,8 +13,12 @@
 			<preference id="bookmarksTextHidePreference"
 				name="extensions.org.bonsaimind.thinbookmarks.bookmarks.text.hide"
 				type="bool" />
+			<preference id="dropdownHideOpenAllInTabsPreference"
+				name="extensions.org.bonsaimind.thinbookmarks.dropdown.hideopenallintabs"
+				type="bool" />
 			<preference id="dropdownMinimumWidthPreference"
-				name="extensions.org.bonsaimind.thinbookmarks.dropdown.minwidth" type="int" />
+				name="extensions.org.bonsaimind.thinbookmarks.dropdown.minwidth"
+				type="int" />
 			<preference id="dropdownScrollbarPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.dropdown.scrollbar"
 				type="bool" />
@@ -121,18 +125,21 @@
 			<checkbox preference="foldersDropdownHidePreference" id="foldersDropdownHide"
 				label="Hide dropdown icon" tooltiptext="Removes the page/site icon from the tabs." />
 		</groupbox>
-		
+
 		<groupbox orient="vertical">
 			<caption label="Dropdown" />
 
 			<checkbox preference="dropdownScrollbarPreference" id="dropdownScrollbar"
-				label="Scrollbars" tooltiptext="Replaces the up/down buttons with a scrollbar in the dropdown of a bookmark folder." />
+				label="Scrollbars"
+				tooltiptext="Replaces the up/down buttons with a scrollbar in the dropdown of a bookmark folder." />
+			<checkbox preference="dropdownHideOpenAllInTabsPreference"
+				id="dropdownHideallintabs" label="Hide 'Open All in Tabs' entry"
+				tooltiptext="Hides the 'Open All in Tabs' entry." />
 			<hbox align="horizontal">
 				<label control="dropdownMinimumWidth" value="Minimum width: " />
 				<spacer flex="1" />
 				<tooltip id="dropdownMinimumWidthTooltip">
-					<label
-						value="The minimum width for the dropdown of a bookmarks folder." />
+					<label value="The minimum width for the dropdown of a bookmarks folder." />
 					<label value="Default value: 0" style="font-weight: bold;" />
 				</tooltip>
 				<textbox type="number" increment="1" min="0"
