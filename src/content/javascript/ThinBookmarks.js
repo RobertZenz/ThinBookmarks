@@ -107,6 +107,24 @@ var ThinBookmarks = {
 				}
 				break;
 			
+			case "dropdown.minwidth":
+				var minimumWidth = this.preferences.getIntPref(name);
+				
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems scrollbox { min-width: " + minimumWidth
+						+ "px !important; }");
+				break;
+			
+			case "dropdown.scrollbar":
+				if (this.preferences.getBoolPref(name)) {
+					DynamicStyleSheets
+							.register(
+									name,
+									"#PlacesToolbarItems scrollbox { overflow-y: auto !important; } #PlacesToolbarItems autorepeatbutton { display:none !important; }");
+				} else {
+					DynamicStyleSheets.unregister(name);
+				}
+				break;
+			
 			case "folders.dropdown.hide":
 				if (this.preferences.getBoolPref(name)) {
 					DynamicStyleSheets
@@ -208,6 +226,11 @@ var ThinBookmarks = {
 		this.refreshPreference("bookmarks.icon.hide");
 		defaultPreferences.setBoolPref("bookmarks.text.hide", true);
 		this.refreshPreference("bookmarks.text.hide");
+		
+		defaultPreferences.setIntPref("dropdown.minwidth", 0);
+		this.refreshPreference("dropdown.minwidth");
+		defaultPreferences.setBoolPref("dropdown.scrollbar", false);
+		this.refreshPreference("dropdown.scrollbar");
 		
 		defaultPreferences.setBoolPref("folders.dropdown.hide", true);
 		this.refreshPreference("folders.dropdown.hide");
