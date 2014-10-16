@@ -171,9 +171,10 @@ var ThinBookmarks = {
 				var itemHeight = height - this.preferences.getIntPref("item.height.difference");
 				
 				DynamicStyleSheets.register(name, "#PersonalToolbar, #PlacesToolbar { height: " + height
-						+ "px !important; max-height: " + height
+						+ "px !important; max-height: " + height + "px !important; min-height: " + height
 						+ "px !important; } #PersonalToolbar > *, #PlacesToolbarItems > * { height: " + itemHeight
-						+ "px !important; max-height: " + itemHeight + "px !important;}");
+						+ "px !important; max-height: " + itemHeight + "px !important; min-height: " + itemHeight
+						+ "px !important; }");
 				break;
 			
 			case "items.icon.padding.bottom":
