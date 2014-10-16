@@ -130,7 +130,7 @@ var ThinBookmarks = {
 					DynamicStyleSheets
 							.register(
 									name,
-									"#PlacesToolbarItems scrollbox { overflow-y: auto !important; } #PlacesToolbarItems autorepeatbutton { display:none !important; }");
+									"#PlacesToolbarItems scrollbox { overflow-y: auto !important; } #PlacesToolbarItems autorepeatbutton { display: none !important; }");
 				} else {
 					DynamicStyleSheets.unregister(name);
 				}
