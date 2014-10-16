@@ -112,7 +112,7 @@ var ThinBookmarks = {
 					DynamicStyleSheets
 							.register(
 									name,
-									"menuitem[label=\"Open All in Tabs\"], menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
+									"menuitem[class=\"openintabs-menuitem\"], menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
 				} else {
 					DynamicStyleSheets.unregister(name);
 				}
