@@ -39,6 +39,9 @@
 			<preference id="itemsIconPaddingTopPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.items.icon.padding.top"
 				type="int" />
+			<preference id="paddingBetweenItemsPreference"
+				name="extensions.org.bonsaimind.thinbookmarks.items.padding"
+				type="int" />
 			<preference id="itemsTextPaddingTopPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.items.text.padding.top"
 				type="int" />
@@ -58,6 +61,16 @@
 				</tooltip>
 				<textbox type="number" increment="1" preference="height" id="height"
 					tooltip="tabsHeightTooltip" />
+			</hbox>
+			<hbox align="horizontal">
+				<label control="paddingBetweenItems" value="Padding between items: " />
+				<spacer flex="1" />
+				<tooltip id="paddingBetweenItemsTooltip">
+					<label value="Defines the padding between items on the bookmarks bar." />
+					<label value="Default value: 0" style="font-weight: bold;" />
+				</tooltip>
+				<textbox type="number" increment="1" min="-99999999"
+					preference="paddingBetweenItemsPreference" id="paddingBetweenItems" tooltip="paddingBetweenItemsTooltip" />
 			</hbox>
 		</groupbox>
 

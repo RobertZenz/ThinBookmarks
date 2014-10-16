@@ -211,6 +211,17 @@ var ThinBookmarks = {
 				
 				break;
 			
+			case "items.padding":
+				var padding = this.preferences.getIntPref(name);
+				
+				if (padding != 0) {
+					DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item { margin-right: " + padding
+							+ "px !important; }");
+				} else {
+					DynamicStyleSheets.unregister(name);
+				}
+				break;
+			
 			case "items.text.padding.top":
 				var itemsTextPaddingTop = this.preferences.getIntPref(name);
 				
@@ -261,6 +272,8 @@ var ThinBookmarks = {
 		this.refreshPreference("items.icon.padding.bottom");
 		defaultPreferences.setIntPref("items.icon.padding.top", -7);
 		this.refreshPreference("items.icon.padding.top");
+		defaultPreferences.setIntPref("items.padding", 0);
+		this.refreshPreference("items.padding");
 		defaultPreferences.setIntPref("items.text.padding.top", -1);
 		this.refreshPreference("items.text.padding.top");
 	},
