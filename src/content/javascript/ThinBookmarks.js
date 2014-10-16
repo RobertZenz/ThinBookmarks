@@ -112,7 +112,7 @@ var ThinBookmarks = {
 					DynamicStyleSheets
 							.register(
 									name,
-									"menuitem[class=\"openintabs-menuitem\"], menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
+									"#PlacesToolbarItems menuitem[class=\"openintabs-menuitem\"], #PlacesToolbarItems menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
 				} else {
 					DynamicStyleSheets.unregister(name);
 				}
