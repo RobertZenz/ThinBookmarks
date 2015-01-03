@@ -40,8 +40,7 @@
 				name="extensions.org.bonsaimind.thinbookmarks.items.icon.padding.top"
 				type="int" />
 			<preference id="paddingBetweenItemsPreference"
-				name="extensions.org.bonsaimind.thinbookmarks.items.padding"
-				type="int" />
+				name="extensions.org.bonsaimind.thinbookmarks.items.padding" type="int" />
 			<preference id="itemsTextPaddingTopPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.items.text.padding.top"
 				type="int" />
@@ -62,6 +61,11 @@
 				<textbox type="number" increment="1" preference="height" id="height"
 					tooltip="tabsHeightTooltip" />
 			</hbox>
+		</groupbox>
+
+		<groupbox orient="vertical">
+			<caption label="Items" />
+
 			<hbox align="horizontal">
 				<label control="paddingBetweenItems" value="Padding between items: " />
 				<spacer flex="1" />
@@ -70,12 +74,9 @@
 					<label value="Default value: 0" style="font-weight: bold;" />
 				</tooltip>
 				<textbox type="number" increment="1" min="-99999999"
-					preference="paddingBetweenItemsPreference" id="paddingBetweenItems" tooltip="paddingBetweenItemsTooltip" />
+					preference="paddingBetweenItemsPreference" id="paddingBetweenItems"
+					tooltip="paddingBetweenItemsTooltip" />
 			</hbox>
-		</groupbox>
-
-		<groupbox orient="vertical">
-			<caption label="Items" />
 
 			<hbox align="horizontal">
 				<label control="itemsIconPaddingTop" value="Icon padding top: " />
