@@ -186,19 +186,11 @@ var ThinBookmarks = {
 							}
 						});
 		
-		var heightFunction = function(name, value) {
-			var height = Preferences.getInt("height", 24);
-			var itemHeight = height - Preferences.getInt("item.height.difference", 2);
-			
-			DynamicStyleSheets.register(name, "#PersonalToolbar, #PlacesToolbar { height: " + height
-					+ "px !important; max-height: " + height + "px !important; min-height: " + height
-					+ "px !important; } #PersonalToolbar > *, #PlacesToolbarItems > * { height: " + itemHeight
-					+ "px !important; max-height: " + itemHeight + "px !important; min-height: " + itemHeight
+		Preferences.registerInt("height", 24, function(name, value) {
+			DynamicStyleSheets.register(name, "#PersonalToolbar, #PlacesToolbar { height: " + value
+					+ "px !important; max-height: " + value + "px !important; min-height: " + value
 					+ "px !important; }");
-		};
-		
-		Preferences.registerInt("height", 24, heightFunction);
-		Preferences.registerInt("item.height.difference", 2, heightFunction);
+		});
 		
 		Preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
 			if (value > 0) {

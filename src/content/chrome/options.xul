@@ -62,30 +62,32 @@
 						value="If the icon is squeezed, you'll have to decrease the bottom padding." />
 					<label value="Default value: 24" style="font-weight: bold;" />
 				</tooltip>
-				<textbox type="number" increment="1" preference="heightPreference" id="height"
-					tooltip="tabsHeightTooltip" />
+				<textbox type="number" increment="1" preference="heightPreference"
+					id="height" tooltip="tabsHeightTooltip" />
 			</hbox>
 
 			<hbox align="horizontal">
 				<label control="height" value="Padding top: " />
 				<spacer flex="1" />
 				<tooltip id="paddingTopTooltip">
-					<label value="Defines the amount of padding between the items and the top." />
+					<label
+						value="Defines the amount of padding between the items and the top." />
 					<label value="Default value: 0" style="font-weight: bold;" />
 				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="paddingTopPreference" id="paddingTop"
-					tooltip="paddingTopTooltip" />
+				<textbox type="number" increment="1" min="-99999999"
+					preference="paddingTopPreference" id="paddingTop" tooltip="paddingTopTooltip" />
 			</hbox>
 
 			<hbox align="horizontal">
 				<label control="height" value="Padding bottom: " />
 				<spacer flex="1" />
 				<tooltip id="paddingBottomTooltip">
-					<label value="Defines the amount of padding between the items and the bottom." />
+					<label
+						value="Defines the amount of padding between the items and the bottom." />
 					<label value="Default value: 0" style="font-weight: bold;" />
 				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="paddingBottomPreference" id="paddingBottom"
-					tooltip="paddingBottomTooltip" />
+				<textbox type="number" increment="1" min="-99999999"
+					preference="paddingBottomPreference" id="paddingBottom" tooltip="paddingBottomTooltip" />
 			</hbox>
 		</groupbox>
 
