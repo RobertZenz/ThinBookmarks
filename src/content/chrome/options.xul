@@ -31,7 +31,7 @@
 			<preference id="foldersTextHidePreference"
 				name="extensions.org.bonsaimind.thinbookmarks.folders.text.hide"
 				type="bool" />
-			<preference id="height"
+			<preference id="heightPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.height" type="int" />
 			<preference id="itemsIconPaddingBottomPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.items.icon.padding.bottom"
@@ -62,7 +62,7 @@
 						value="If the icon is squeezed, you'll have to decrease the bottom padding." />
 					<label value="Default value: 24" style="font-weight: bold;" />
 				</tooltip>
-				<textbox type="number" increment="1" preference="height" id="height"
+				<textbox type="number" increment="1" preference="heightPreference" id="height"
 					tooltip="tabsHeightTooltip" />
 			</hbox>
 
