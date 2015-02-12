@@ -238,6 +238,36 @@ var ThinBookmarks = {
 				}
 				
 				break;
+			
+			case "padding.bottom":
+				var paddingBotom = this.preferences.getIntPref(name);
+				
+				if (paddingBotom > 0) {
+					DynamicStyleSheets.register(name, "#PlacesToolbarItems { padding-bottom: " + paddingBotom
+							+ "px !important; }");
+				} else if (paddingBotom < 0) {
+					DynamicStyleSheets.register(name, "#PlacesToolbarItems { margin-bottom: " + paddingBotom
+							+ "px !important; }");
+				} else {
+					DynamicStyleSheets.unregister(name);
+				}
+				
+				break;
+			
+			case "padding.top":
+				var paddingTop = this.preferences.getIntPref(name);
+				
+				if (paddingTop > 0) {
+					DynamicStyleSheets.register(name, "#PlacesToolbarItems { padding-top: " + paddingTop
+							+ "px !important; }");
+				} else if (paddingTop < 0) {
+					DynamicStyleSheets.register(name, "#PlacesToolbarItems { margin-top: " + paddingTop
+							+ "px !important; }");
+				} else {
+					DynamicStyleSheets.unregister(name);
+				}
+				
+				break;
 		}
 	},
 	
@@ -276,6 +306,11 @@ var ThinBookmarks = {
 		this.refreshPreference("items.padding");
 		defaultPreferences.setIntPref("items.text.padding.top", -1);
 		this.refreshPreference("items.text.padding.top");
+		
+		defaultPreferences.setIntPref("padding.bottom", 0);
+		this.refreshPreference("padding.bottom");
+		defaultPreferences.setIntPref("padding.top", 0);
+		this.refreshPreference("padding.top");
 	},
 	
 	init : function() {
