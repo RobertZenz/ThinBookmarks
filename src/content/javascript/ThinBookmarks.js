@@ -77,14 +77,6 @@ var ThinBookmarks = {
 	onWindowTitleChange : function(window, title) {
 	},
 	
-	observe : function(subject, topic, data) {
-		if (topic != "nsPref:changed") {
-			return;
-		}
-		
-		this.refreshPreference(data);
-	},
-	
 	setDefaultPreferences : function() {
 		Preferences
 				.registerBool(
