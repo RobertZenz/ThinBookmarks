@@ -31,7 +31,7 @@ var CSSBuilder = function(selector) {
 		return this;
 	}
 
-	this.autopadding = function(postfix, value) {
+	this.autoPadding = function(postfix, value) {
 		var declaration = "";
 		
 		if (postfix != null && postfix !== "") {

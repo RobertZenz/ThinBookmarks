@@ -150,11 +150,11 @@ var ThinBookmarks = {
 		});
 		
 		Preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon").autopadding("bottom", value);
+			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon").autoPadding("bottom", value);
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
 		Preferences.registerInt("items.icon.padding.top", -7, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon").autopadding("top", value);
+			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon").autoPadding("top", value);
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
 		Preferences.registerInt("items.padding", 0, function(name, value) {
@@ -162,16 +162,16 @@ var ThinBookmarks = {
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
 		Preferences.registerInt("items.text.padding.top", -1, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text").autopadding("top", value);
+			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text").autoPadding("top", value);
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
 		
 		Preferences.registerInt("padding.bottom", 0, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems").autopadding("bottom", value);
+			var css = new CSSBuilder("#PlacesToolbarItems").autoPadding("bottom", value);
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
 		Preferences.registerInt("padding.top", 0, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems").autopadding("top", value);
+			var css = new CSSBuilder("#PlacesToolbarItems").autoPadding("top", value);
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
 	},
