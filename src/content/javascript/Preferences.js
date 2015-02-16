@@ -53,10 +53,8 @@ var Preferences = {
 		this.preferences = {};
 		this.getFunctions = {};
 		
-		this.defaultPreferences = Components.classes["@mozilla.org/preferences-service;1"].getService(
-				Components.interfaces.nsIPrefService).getDefaultBranch(this.branch);
-		this.preferences = Components.classes["@mozilla.org/preferences-service;1"].getService(
-				Components.interfaces.nsIPrefService).getBranch(this.branch);
+		this.defaultPreferences = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getDefaultBranch(this.branch);
+		this.preferences = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch(this.branch);
 		this.preferences.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		this.preferences.addObserver("", this, false);
 	},

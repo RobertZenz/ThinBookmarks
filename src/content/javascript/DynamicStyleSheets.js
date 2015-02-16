@@ -13,17 +13,20 @@ Components.utils.import("resource://gre/modules/Services.jsm");
 
 var DynamicStyleSheets = {
 	styleSheets : {},
-	styleSheetService : Components.classes["@mozilla.org/content/style-sheet-service;1"]
-			.getService(Components.interfaces.nsIStyleSheetService),
+	styleSheetService : Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService),
 	
 	register : function(name, style) {
 		this.unregister(name);
+		
 		var styleSheetContent = "@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);";
 		styleSheetContent = styleSheetContent + "@-moz-document url(chrome://browser/content/browser.xul) {";
 		styleSheetContent = styleSheetContent + style;
 		styleSheetContent = styleSheetContent + "}";
+		
 		this.styleSheets[name] = Services.io.newURI("data:text/css;base64," + btoa(styleSheetContent), null, null);
+		
 		var styleSheet = this.styleSheets[name];
+		
 		if (!this.styleSheetService.sheetRegistered(styleSheet, this.styleSheetService.USER_SHEET)) {
 			this.styleSheetService.loadAndRegisterSheet(styleSheet, this.styleSheetService.USER_SHEET);
 		}
@@ -31,6 +34,7 @@ var DynamicStyleSheets = {
 	
 	unregister : function(name) {
 		var styleSheet = this.styleSheets[name];
+		
 		if (styleSheet != null) {
 			if (this.styleSheetService.sheetRegistered(styleSheet, this.styleSheetService.USER_SHEET)) {
 				this.styleSheetService.unregisterSheet(styleSheet, this.styleSheetService.USER_SHEET);

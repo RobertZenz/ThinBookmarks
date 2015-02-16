@@ -66,8 +66,7 @@ var ThinBookmarks = {
 	},
 	
 	onOpenWindow : function(window) {
-		var domWindow = window.docShell.QueryInterface(Components.interfaces.nsIInterfaceRequestor).getInterface(
-				Components.interfaces.nsIDOMWindow);
+		var domWindow = window.docShell.QueryInterface(Components.interfaces.nsIInterfaceRequestor).getInterface(Components.interfaces.nsIDOMWindow);
 		domWindow.addEventListener("load", this, true);
 	},
 	
@@ -78,105 +77,61 @@ var ThinBookmarks = {
 	},
 	
 	setDefaultPreferences : function() {
-		Preferences
-				.registerBool(
-						"bookmarks.icon.hide",
-						false,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(name,
-												"#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-icon { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
-		Preferences
-				.registerBool(
-						"bookmarks.text.hide",
-						true,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(name,
-												"#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-text { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
+		Preferences.registerBool("bookmarks.icon.hide", false, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-icon { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
+		Preferences.registerBool("bookmarks.text.hide", true, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-text { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
 		
-		Preferences
-				.registerBool(
-						"dropdown.hideopenallintabs",
-						false,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(
-												name,
-												"#PlacesToolbarItems menuitem[class=\"openintabs-menuitem\"], #PlacesToolbarItems menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
+		Preferences.registerBool("dropdown.hideopenallintabs", false, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems menuitem[class=\"openintabs-menuitem\"], #PlacesToolbarItems menuseparator[class=\"bookmarks-actions-menuseparator\"] { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
 		Preferences.registerInt("dropdown.minwidth", 0, function(name, value) {
 			DynamicStyleSheets.register(name, "#PlacesToolbarItems scrollbox { min-width: " + value
 					+ "px !important; }");
 		});
-		Preferences
-				.registerBool(
-						"dropdown.scrollbar",
-						false,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(
-												name,
-												"#PlacesToolbarItems scrollbox { overflow-y: auto !important; } #PlacesToolbarItems autorepeatbutton { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
+		Preferences.registerBool("dropdown.scrollbar", false, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems scrollbox { overflow-y: auto !important; } #PlacesToolbarItems autorepeatbutton { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
 		
-		Preferences
-				.registerBool(
-						"folders.dropdown.hide",
-						true,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(name,
-												"#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-menu-dropmarker { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
-		Preferences
-				.registerBool(
-						"folders.icon.hide",
-						true,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(name,
-												"#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-icon { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
-		Preferences
-				.registerBool(
-						"folders.text.hide",
-						false,
-						function(name, value) {
-							if (value) {
-								DynamicStyleSheets
-										.register(name,
-												"#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-text { display: none !important; }");
-							} else {
-								DynamicStyleSheets.unregister(name);
-							}
-						});
+		Preferences.registerBool("folders.dropdown.hide", true, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-menu-dropmarker { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
+		Preferences.registerBool("folders.icon.hide", true, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-icon { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
+		Preferences.registerBool("folders.text.hide", false, function(name, value) {
+			if (value) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-text { display: none !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
 		
 		Preferences.registerInt("height", 24, function(name, value) {
 			DynamicStyleSheets.register(name, "#PersonalToolbar, #PlacesToolbar { height: " + value
@@ -186,26 +141,22 @@ var ThinBookmarks = {
 		
 		Preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
 			if (value > 0) {
-				DynamicStyleSheets.register(name,
-						"#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { padding-bottom: " + value
-								+ "px !important; }");
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { padding-bottom: "
+						+ value + "px !important; }");
 			} else if (value < 0) {
-				DynamicStyleSheets.register(name,
-						"#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { margin-bottom: " + value
-								+ "px !important; }");
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { margin-bottom: "
+						+ value + "px !important; }");
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
 		});
 		Preferences.registerInt("items.icon.padding.top", -7, function(name, value) {
 			if (value > 0) {
-				DynamicStyleSheets.register(name,
-						"#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { padding-top: " + value
-								+ "px !important; }");
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { padding-top: "
+						+ value + "px !important; }");
 			} else if (value < 0) {
-				DynamicStyleSheets.register(name,
-						"#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { margin-top: " + value
-								+ "px !important; }");
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon { margin-top: "
+						+ value + "px !important; }");
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
@@ -220,30 +171,25 @@ var ThinBookmarks = {
 		});
 		Preferences.registerInt("items.text.padding.top", -1, function(name, value) {
 			if (value > 0) {
-				DynamicStyleSheets.register(name,
-						"#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text { padding-top: " + value
-								+ "px !important; }");
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text { padding-top: "
+						+ value + "px !important; }");
 			} else if (value < 0) {
-				DynamicStyleSheets.register(name,
-						"#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text { margin-top: " + value
-								+ "px !important; }");
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text { margin-top: "
+						+ value + "px !important; }");
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
 		});
 		
-		Preferences.registerInt("padding.bottom", 0,
-				function(name, value) {
-					if (value > 0) {
-						DynamicStyleSheets.register(name, "#PlacesToolbarItems { padding-bottom: " + value
-								+ "px !important; }");
-					} else if (value < 0) {
-						DynamicStyleSheets.register(name, "#PlacesToolbarItems { margin-bottom: " + value
-								+ "px !important; }");
-					} else {
-						DynamicStyleSheets.unregister(name);
-					}
-				});
+		Preferences.registerInt("padding.bottom", 0, function(name, value) {
+			if (value > 0) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems { padding-bottom: " + value + "px !important; }");
+			} else if (value < 0) {
+				DynamicStyleSheets.register(name, "#PlacesToolbarItems { margin-bottom: " + value + "px !important; }");
+			} else {
+				DynamicStyleSheets.unregister(name);
+			}
+		});
 		Preferences.registerInt("padding.top", 0, function(name, value) {
 			if (value > 0) {
 				DynamicStyleSheets.register(name, "#PlacesToolbarItems { padding-top: " + value + "px !important; }");
@@ -257,8 +203,7 @@ var ThinBookmarks = {
 	
 	init : function() {
 		this.styleSheet = Services.io.newURI("resource://thinbookmarks/thinbookmarks.css", null, null);
-		this.styleSheetService = Components.classes["@mozilla.org/content/style-sheet-service;1"]
-				.getService(Components.interfaces.nsIStyleSheetService);
+		this.styleSheetService = Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
 		
 		Preferences.init("extensions.org.bonsaimind.thinbookmarks.");
 		this.setDefaultPreferences();
