@@ -13,22 +13,31 @@ Components.utils.import("resource://gre/modules/Services.jsm");
 
 var DynamicStyleSheets = {
 	styleSheets : {},
-	styleSheetService : Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService),
+	service : null,
+	
+	init : function() {
+		var component = Components.classes["@mozilla.org/content/style-sheet-service;1"];
+		this.service = component.getService(Components.interfaces.nsIStyleSheetService);
+	},
 	
 	register : function(name, style) {
-		this.unregister(name);
-		
 		var styleSheetContent = "@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);";
 		styleSheetContent = styleSheetContent + "@-moz-document url(chrome://browser/content/browser.xul) {";
 		styleSheetContent = styleSheetContent + style;
 		styleSheetContent = styleSheetContent + "}";
 		
-		this.styleSheets[name] = Services.io.newURI("data:text/css;base64," + btoa(styleSheetContent), null, null);
+		this.registerPath(name, "data:text/css;base64," + btoa(styleSheetContent));
+	},
+	
+	registerPath : function(name, path) {
+		this.unregister(name)
+
+		this.styleSheets[name] = Services.io.newURI(path, null, null);
 		
 		var styleSheet = this.styleSheets[name];
 		
-		if (!this.styleSheetService.sheetRegistered(styleSheet, this.styleSheetService.USER_SHEET)) {
-			this.styleSheetService.loadAndRegisterSheet(styleSheet, this.styleSheetService.USER_SHEET);
+		if (!this.service.sheetRegistered(styleSheet, this.service.USER_SHEET)) {
+			this.service.loadAndRegisterSheet(styleSheet, this.service.USER_SHEET);
 		}
 	},
 	
@@ -36,10 +45,12 @@ var DynamicStyleSheets = {
 		var styleSheet = this.styleSheets[name];
 		
 		if (styleSheet != null) {
-			if (this.styleSheetService.sheetRegistered(styleSheet, this.styleSheetService.USER_SHEET)) {
-				this.styleSheetService.unregisterSheet(styleSheet, this.styleSheetService.USER_SHEET);
+			if (this.service.sheetRegistered(styleSheet, this.service.USER_SHEET)) {
+				this.service.unregisterSheet(styleSheet, this.service.USER_SHEET);
 			}
 		}
+		
+		this.styleSheets[name] = null;
 	},
 	
 	unregisterAll : function() {
