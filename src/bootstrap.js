@@ -19,7 +19,7 @@ function startup(data, reason) {
 
 function shutdown(data, reason) {
 	ResourceAlias.unregister();
-	ThinBookmarks.uninit();
+	ThinBookmarks.destroy();
 }
 
 function install(data, reason) {
