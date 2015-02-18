@@ -94,7 +94,7 @@ var Preferences = {
 				.getService(Components.interfaces.nsIPrefService).getDefaultBranch(this.branch);
 		this.preferences = Components.classes["@mozilla.org/preferences-service;1"]
 				.getService(Components.interfaces.nsIPrefService).getBranch(this.branch);
-		this.preferences.QueryInterface(Components.interfaces.nsIPrefBranch2);
+		this.preferences.QueryInterface(Components.interfaces.nsIPrefBranch);
 		this.preferences.addObserver("", this, false);
 	},
 	
