@@ -13,6 +13,9 @@ var EXPORTED_SYMBOLS = [ "ResourceAlias" ];
 
 Components.utils.import("resource://gre/modules/Services.jsm");
 
+/**
+ * A simple utility that allows to register a resource alias.
+ */
 var ResourceAlias = {
 	resourceProtocolHandler : null,
 	
