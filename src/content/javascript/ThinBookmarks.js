@@ -25,6 +25,8 @@ var ThinBookmarks = {
 	
 	init : function() {
 		DynamicStyleSheets.init();
+		DynamicStyleSheets.registerPath("main", "resource://thinbookmarks/content/css/main.css");
+		
 		Preferences.init("extensions.org.bonsaimind.thinbookmarks.");
 		
 		this.setPreferences();
