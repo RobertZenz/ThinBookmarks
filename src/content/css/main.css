@@ -5,5 +5,8 @@
 	#PlacesToolbarItems > .bookmark-item {
 		min-height: 0px !important;
 	}
-
+	
+	#PersonalToolbar > * {
+		min-height: 0px !important;
+	}
 }
