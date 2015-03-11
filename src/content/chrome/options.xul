@@ -134,19 +134,6 @@
 					preference="itemPaddingTopPreference" id="itemPaddingTop"
 					tooltip="itemPaddingTopTooltip" />
 			</hbox>
-
-			<hbox align="horizontal">
-				<label control="itemPaddingLeft" value="Left padding: " />
-				<spacer flex="1" />
-				<tooltip id="itemPaddingLeftTooltip">
-					<label value="Defines the left padding of a bookmark item." />
-					<label value="Mainly used for countering some odd effects." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999"
-					preference="itemPaddingLeftPreference" id="itemPaddingLeft"
-					tooltip="itemPaddingLeftTooltip" />
-			</hbox>
 			
 			<hbox align="horizontal">
 				<label control="itemPaddingBottom" value="Bottom padding: " />
@@ -159,19 +146,6 @@
 				<textbox type="number" increment="1" min="-99999999"
 					preference="itemPaddingBottomPreference" id="itemPaddingBottom"
 					tooltip="itemPaddingBottomTooltip" />
-			</hbox>
-			
-			<hbox align="horizontal">
-				<label control="itemPaddingRight" value="Right padding: " />
-				<spacer flex="1" />
-				<tooltip id="itemPaddingRightTooltip">
-					<label value="Defines the right padding of a bookmark item." />
-					<label value="Mainly used for countering some odd effects." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999"
-					preference="itemPaddingRightPreference" id="itemPaddingRight"
-					tooltip="itemPaddingRightTooltip" />
 			</hbox>
 			
 			<hbox align="horizontal">

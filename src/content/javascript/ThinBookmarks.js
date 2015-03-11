@@ -114,14 +114,6 @@ var ThinBookmarks = {
 			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item").autoPadding("bottom", value);
 			DynamicStyleSheets.register(name, css.toCSS());
 		});
-		Preferences.registerInt("item.padding.left", 3, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item").autoPadding("left", value);
-			DynamicStyleSheets.register(name, css.toCSS());
-		});
-		Preferences.registerInt("item.padding.right", 3, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item").autoPadding("right", value);
-			DynamicStyleSheets.register(name, css.toCSS());
-		});
 		Preferences.registerInt("item.padding.top", 0, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item").autoPadding("top", value);
 			DynamicStyleSheets.register(name, css.toCSS());
