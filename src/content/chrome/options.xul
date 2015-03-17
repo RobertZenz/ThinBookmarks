@@ -33,18 +33,6 @@
 				type="bool" />
 			<preference id="heightPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.height" type="int" />
-			<preference id="itemPaddingBottomPreference"
-				name="extensions.org.bonsaimind.thinbookmarks.item.padding.bottom"
-				type="int" />
-			<preference id="itemPaddingLeftPreference"
-				name="extensions.org.bonsaimind.thinbookmarks.item.padding.left"
-				type="int" />
-			<preference id="itemPaddingRightPreference"
-				name="extensions.org.bonsaimind.thinbookmarks.item.padding.right"
-				type="int" />
-			<preference id="itemPaddingTopPreference"
-				name="extensions.org.bonsaimind.thinbookmarks.item.padding.top"
-				type="int" />
 			<preference id="itemsIconPaddingBottomPreference"
 				name="extensions.org.bonsaimind.thinbookmarks.items.icon.padding.bottom"
 				type="int" />
@@ -121,32 +109,6 @@
 
 		<groupbox orient="vertical">
 			<caption label="Bookmark Item" />
-
-			<hbox align="horizontal">
-				<label control="itemPaddingTop" value="Top padding: " />
-				<spacer flex="1" />
-				<tooltip id="itemPaddingTopTooltip">
-					<label value="Defines the top padding of a bookmark item." />
-					<label value="Mainly used for countering some odd effects." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999"
-					preference="itemPaddingTopPreference" id="itemPaddingTop"
-					tooltip="itemPaddingTopTooltip" />
-			</hbox>
-			
-			<hbox align="horizontal">
-				<label control="itemPaddingBottom" value="Bottom padding: " />
-				<spacer flex="1" />
-				<tooltip id="itemPaddingBottomTooltip">
-					<label value="Defines the bottom padding of a bookmark item." />
-					<label value="Mainly used for countering some odd effects." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999"
-					preference="itemPaddingBottomPreference" id="itemPaddingBottom"
-					tooltip="itemPaddingBottomTooltip" />
-			</hbox>
 			
 			<hbox align="horizontal">
 				<label control="itemsIconPaddingTop" value="Icon padding top: " />
