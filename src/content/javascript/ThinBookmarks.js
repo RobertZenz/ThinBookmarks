@@ -107,7 +107,11 @@ var ThinBookmarks = {
 			css = css.addSelector("#PersonalToolbar > *").addSelector("#PlacesToolbarItems > *")
 			css = css.forceHeight(value);
 			
+			var cssChildren = new CSSBuilder("#PersonalToolbar > *").addSelector("#PlacesToolbarItems > *")
+			cssChildren = cssChildren.maxHeight(value);
+			
 			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.register(name + ".children", cssChildren.toCSS());
 		});
 		
 		Preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
