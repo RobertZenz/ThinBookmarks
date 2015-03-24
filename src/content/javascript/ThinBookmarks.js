@@ -26,10 +26,10 @@ var ThinBookmarks = {
 		
 		Preferences.init("extensions.org.bonsaimind.thinbookmarks.");
 		
-		this.setPreferences();
+		this.initPreferences();
 	},
 	
-	setPreferences : function() {
+	initPreferences : function() {
 		Preferences.registerBool("bookmarks.icon.hide", false, function(name, value) {
 			if (value) {
 				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-icon")
