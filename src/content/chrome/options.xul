@@ -84,6 +84,8 @@
 				<tooltip id="paddingBottomTooltip">
 					<label
 						value="Defines the amount of padding between the items and the bottom." />
+					<label
+						value="This option might or might not work depending on your platform." />
 					<label value="Default value: 0" style="font-weight: bold;" />
 				</tooltip>
 				<textbox type="number" increment="1" min="-99999999"
@@ -109,7 +111,7 @@
 
 		<groupbox orient="vertical">
 			<caption label="Bookmark Item" />
-			
+
 			<hbox align="horizontal">
 				<label control="itemsIconPaddingTop" value="Icon padding top: " />
 				<spacer flex="1" />
