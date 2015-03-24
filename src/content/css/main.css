@@ -3,12 +3,18 @@
 @-moz-document url(chrome://browser/content/browser.xul) {
 
 	#PlacesToolbarItems > .bookmark-item {
+		/* Make sure the bookmark items can become smaller. */
 		min-height: 0px !important;
+		
+		/* Remove the padding from the bookmark items, needed at least for
+		 * Microsoft Windows so that the bookmark items can become smaller.
+		 */
 		padding-bottom: 0px !important;
 		padding-top: 0px !important;
 	}
 	
 	#PersonalToolbar > * {
+		/* Make sure that all items in the toolbar can become smaller. */
 		min-height: 0px !important;
 	}
 }
