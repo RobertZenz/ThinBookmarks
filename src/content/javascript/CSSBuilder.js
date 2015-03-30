@@ -60,6 +60,36 @@ var CSSBuilder = function(selector) {
 	};
 	
 	/**
+	 * Sets an "automatic" -moz-padding. If the given value is positive, the
+	 * margin will be set to 0px and the padding will be set to the given value.
+	 * If the given value is negative, the margin will be set to the given value
+	 * and the padding will be set to 0px.
+	 * 
+	 * @param postfix The postfix, start or end.
+	 * @param value The value.
+	 * @return This object.
+	 */
+	this.autoMozPadding = function(postfix, value) {
+		var declaration = "";
+		
+		if (postfix != null && postfix !== "") {
+			declaration = declaration + "-" + postfix;
+		} else {
+			declaration = declaration + "-start";
+		}
+		
+		if (value >= 0) {
+			this.add("-moz-padding" + declaration, this.addUnit(value));
+			this.add("-moz-margin" + declaration, "0px");
+		} else {
+			this.add("-moz-padding" + declaration, "0px");
+			this.add("-moz-margin" + declaration, this.addUnit(value));
+		}
+		
+		return this;
+	}
+
+	/**
 	 * Sets an "automatic" padding. If the given value is positive, the margin
 	 * will be set to 0px and the padding will be set to the given value. If the
 	 * given value is negative, the margin will be set to the given value and
@@ -85,6 +115,28 @@ var CSSBuilder = function(selector) {
 			this.add("margin" + declaration, this.addUnit(value));
 		}
 		
+		return this;
+	};
+	
+	/**
+	 * Sets the font family.
+	 * 
+	 * @param value The font family or the font name.
+	 * @return This object.
+	 */
+	this.fontFamily = function(value) {
+		this.add("font-family", value);
+		return this;
+	};
+	
+	/**
+	 * Sets the font size.
+	 * 
+	 * @param value The font size.
+	 * @return This object.
+	 */
+	this.fontSize = function(value) {
+		this.add("font-size", this.addUnit(value));
 		return this;
 	};
 	

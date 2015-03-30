@@ -58,6 +58,26 @@ var Preferences = {
 	},
 	
 	/**
+	 * Gets a char preference. If the preference does not exist, the given
+	 * default value is returned instead.
+	 * 
+	 * @param name The name of the preference.
+	 * @param defaultValue The default value to return in case that the
+	 *            preference does not exist.
+	 * @returns The value of the preference, or the default value if the
+	 *          preference does not exist.
+	 */
+	getChar : function(name, defaultValue) {
+		try {
+			return this.preferences.getCharPref(name);
+		} catch (e) {
+			// Empty on purpose
+		}
+		
+		return defaultValue;
+	},
+	
+	/**
 	 * Gets an int preference. If the preference does not exist, the given
 	 * default value is returned instead.
 	 * 
