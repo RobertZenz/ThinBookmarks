@@ -34,7 +34,7 @@ var ThinBookmarks = {
 			if (value) {
 				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-icon")
 						.hide();
-				DynamicStyleSheets.register(name, css.toCSS());
+				DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
@@ -43,7 +43,7 @@ var ThinBookmarks = {
 			if (value) {
 				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-text")
 						.hide();
-				DynamicStyleSheets.register(name, css.toCSS());
+				DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
@@ -54,20 +54,20 @@ var ThinBookmarks = {
 				var css = new CSSBuilder("#PlacesToolbarItems menuitem[class=\"openintabs-menuitem\"]")
 				css = css.addSelector("#PlacesToolbarItems menuseparator[class=\"bookmarks-actions-menuseparator\"]");
 				css = css.hide();
-				DynamicStyleSheets.register(name, css.toCSS());
+				DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
 		});
 		Preferences.registerInt("dropdown.minwidth", 0, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems scrollbox").minWidth(value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 		Preferences.registerBool("dropdown.scrollbar", false, function(name, value) {
 			if (value) {
 				var cssScrollbox = new CSSBuilder("#PlacesToolbarItems scrollbox").add("overflow-y", "auto");
 				var cssButton = new CSSBuilder("#PlacesToolbarItems autorepeatbutton").hide();
-				DynamicStyleSheets.register(name, cssScrollbox.toCSS() + cssButton.toCSS());
+				DynamicStyleSheets.registerForBrowser(name, cssScrollbox.toCSS() + cssButton.toCSS());
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
@@ -78,7 +78,7 @@ var ThinBookmarks = {
 					if (value) {
 						var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-menu-dropmarker")
 								.hide();
-						DynamicStyleSheets.register(name, css.toCSS());
+						DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 					} else {
 						DynamicStyleSheets.unregister(name);
 					}
@@ -87,7 +87,7 @@ var ThinBookmarks = {
 			if (value) {
 				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-icon")
 						.hide();
-				DynamicStyleSheets.register(name, css.toCSS());
+				DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
@@ -96,7 +96,7 @@ var ThinBookmarks = {
 			if (value) {
 				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-text")
 						.hide();
-				DynamicStyleSheets.register(name, css.toCSS());
+				DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				DynamicStyleSheets.unregister(name);
 			}
@@ -110,37 +110,37 @@ var ThinBookmarks = {
 			var cssChildren = new CSSBuilder("#PersonalToolbar > *").addSelector("#PlacesToolbarItems > *")
 			cssChildren = cssChildren.maxHeight(value);
 			
-			DynamicStyleSheets.register(name, css.toCSS());
-			DynamicStyleSheets.register(name + ".children", cssChildren.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name + ".children", cssChildren.toCSS());
 		});
 		
 		Preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon")
 					.autoPadding("bottom", value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 		Preferences.registerInt("items.icon.padding.top", -7, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon")
 					.autoPadding("top", value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 		Preferences.registerInt("items.padding", 0, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item").margin("right", value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 		Preferences.registerInt("items.text.padding.top", -1, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text")
 					.autoPadding("top", value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 		
 		Preferences.registerInt("padding.bottom", 0, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems").autoPadding("bottom", value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 		Preferences.registerInt("padding.top", 0, function(name, value) {
 			var css = new CSSBuilder("#PlacesToolbarItems").autoPadding("top", value);
-			DynamicStyleSheets.register(name, css.toCSS());
+			DynamicStyleSheets.registerForBrowser(name, css.toCSS());
 		});
 	}
 };
