@@ -10,15 +10,15 @@ function startup(data, reason) {
 	// Load the dependencies in the constructor, because the chrome.manifest
 	// hasn't been read before that.
 	
-	Components.utils.import("chrome://thinbookmarks/content/javascript/ResourceAlias.js");
+	Components.utils.import("chrome://thinbookmarks/content/javascript/sfab/ResourceAlias.js");
 	Components.utils.import("chrome://thinbookmarks/content/javascript/ThinBookmarks.js");
 	
-	ResourceAlias.register(data);
+	ResourceAlias.register("thinbookmarks", data);
 	ThinBookmarks.init();
 }
 
 function shutdown(data, reason) {
-	ResourceAlias.unregister();
+	ResourceAlias.unregister("thinbookmarks");
 	ThinBookmarks.destroy();
 }
 

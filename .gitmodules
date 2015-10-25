@@ -1,0 +1,3 @@
+[submodule "deps/SimpleFirefoxAddonBase"]
+	path = deps/SimpleFirefoxAddonBase
+	url = git@github.com:RobertZenz/SimpleFirefoxAddonBase.git
