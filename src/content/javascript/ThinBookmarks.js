@@ -34,12 +34,14 @@ var ThinBookmarks = {
 	},
 	
 	initPreferences : function() {
+		// We need to extras this into a local variable to make it available
+		// to the callbacks.
 		var _this = this;
 		
 		this.preferences.registerBool("bookmarks.icon.hide", false, function(name, value) {
 			if (value) {
-				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-icon")
-						.hide();
+				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-icon");
+				css = css.hide();
 				_this.styleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				_this.styleSheets.unregister(name);
@@ -47,8 +49,8 @@ var ThinBookmarks = {
 		});
 		this.preferences.registerBool("bookmarks.text.hide", true, function(name, value) {
 			if (value) {
-				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-text")
-						.hide();
+				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item:not([type]) > .toolbarbutton-text");
+				css = css.hide();
 				_this.styleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				_this.styleSheets.unregister(name);
@@ -82,8 +84,8 @@ var ThinBookmarks = {
 		this.preferences
 				.registerBool("folders.dropdown.hide", true, function(name, value) {
 					if (value) {
-						var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-menu-dropmarker")
-								.hide();
+						var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-menu-dropmarker");
+						css = css.hide();
 						_this.styleSheets.registerForBrowser(name, css.toCSS());
 					} else {
 						_this.styleSheets.unregister(name);
@@ -91,8 +93,8 @@ var ThinBookmarks = {
 				});
 		this.preferences.registerBool("folders.icon.hide", true, function(name, value) {
 			if (value) {
-				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-icon")
-						.hide();
+				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-icon");
+				css = css.hide();
 				_this.styleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				_this.styleSheets.unregister(name);
@@ -100,8 +102,8 @@ var ThinBookmarks = {
 		});
 		this.preferences.registerBool("folders.text.hide", false, function(name, value) {
 			if (value) {
-				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-text")
-						.hide();
+				var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item[type=menu] > .toolbarbutton-text");
+				css = css.hide();
 				_this.styleSheets.registerForBrowser(name, css.toCSS());
 			} else {
 				_this.styleSheets.unregister(name);
@@ -121,13 +123,13 @@ var ThinBookmarks = {
 		});
 		
 		this.preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon")
-					.autoPadding("bottom", value);
+			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon");
+			css = css.autoPadding("bottom", value);
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
 		});
 		this.preferences.registerInt("items.icon.padding.top", -7, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon")
-					.autoPadding("top", value);
+			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon");
+			css = css.autoPadding("top", value);
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
 		});
 		this.preferences.registerInt("items.padding", 0, function(name, value) {
@@ -135,8 +137,8 @@ var ThinBookmarks = {
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
 		});
 		this.preferences.registerInt("items.text.padding.top", -1, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text")
-					.autoPadding("top", value);
+			var css = new CSSBuilder("#PlacesToolbarItems > .bookmark-item > .toolbarbutton-text");
+			css = css.autoPadding("top", value);
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
 		});
 		
@@ -150,3 +152,4 @@ var ThinBookmarks = {
 		});
 	}
 };
+
