@@ -1,0 +1,29 @@
+Changelog
+=========
+
+
+1.2.2
+-----
+
+Note: It might be necessary to restart Firefox after this update to get ThinBookmarks working correctly. That's because the addon does not correctly deactivate itself, sorry for the inconvenience.
+
+ * Fixed that disabling/removing the did not correctly disable/remove everything (until a restart).
+ * Slightly changed the layout of the options.
+ * Added settings for top and bottom padding of the bar. The option for the bottom padding might or might not work depending on your platform (works on Linux but not Microsoft Windows).
+ * Removed some trickery about the item height, the items do now have the same height as the bar.
+ * Other items on the Personal Toolbar should now also become smaller.
+
+1.1.1
+-----
+
+ * Fixed that the bookmarks bar could not be smaller than ~19 pixel.
+ * Minimum required version is 4.0.
+ * Hiding "Open All in Tabs" should now work no matter what language Firefox is running in.
+ * Added an option to set the padding between the items on the bar (might not work on anything below ~29).
+
+
+1.0
+---
+
+ * Initial release.
+
