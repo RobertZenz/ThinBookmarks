@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+1.3
+---
+
+ * Tested compatibility with multi-process/e10.
+ * Upped compatibility to 54.*
+
+
 1.2.2
 -----
 
