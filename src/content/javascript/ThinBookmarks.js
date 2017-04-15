@@ -112,14 +112,11 @@ var ThinBookmarks = {
 		
 		this.preferences.registerInt("height", 24, function(name, value) {
 			var css = new CSSBuilder("#PersonalToolbar").addSelector("#PlacesToolbar")
+			css = css.addSelector("#PlacesChevron")
 			css = css.addSelector("#PersonalToolbar > *").addSelector("#PlacesToolbarItems > *")
 			css = css.forceHeight(value);
 			
-			var cssChildren = new CSSBuilder("#PersonalToolbar > *").addSelector("#PlacesToolbarItems > *")
-			cssChildren = cssChildren.maxHeight(value);
-			
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
-			_this.styleSheets.registerForBrowser(name + ".children", cssChildren.toCSS());
 		});
 		
 		this.preferences.registerInt("items.icon.padding.bottom", -7, function(name, value) {
@@ -143,11 +140,12 @@ var ThinBookmarks = {
 		});
 		
 		this.preferences.registerInt("padding.bottom", 0, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems").autoPadding("bottom", value);
+			var css = new CSSBuilder("#PlacesToolbarItems").addSelector("#PlacesChevron");
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
 		});
 		this.preferences.registerInt("padding.top", 0, function(name, value) {
-			var css = new CSSBuilder("#PlacesToolbarItems").autoPadding("top", value);
+			var css = new CSSBuilder("#PlacesToolbarItems").addSelector("#PlacesChevron");
+			css = css.autoPadding("top", value);
 			_this.styleSheets.registerForBrowser(name, css.toCSS());
 		});
 	}
