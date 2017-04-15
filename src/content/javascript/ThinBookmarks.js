@@ -144,7 +144,8 @@ var ThinBookmarks = {
 		this.preferences.registerInt("padding.bottom", 0, function(name, value) {
 			_this.styleSheets.registerForBrowser(name, new CSSBuilder()
 					.addSelector("#PlacesToolbarItems")
-					.addSelector("#PlacesChevron"));
+					.addSelector("#PlacesChevron")
+					.autoPadding("bottom", value));
 		});
 		this.preferences.registerInt("padding.top", 0, function(name, value) {
 			_this.styleSheets.registerForBrowser(name, new CSSBuilder()
