@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
-
+		
 		<!-- General addon information -->
 		<em:id>thinbookmarks@bonsaimind.org</em:id>
 		<em:name>Thin Bookmarks</em:name>
@@ -18,8 +18,8 @@
 		
 		<!-- If it is a bootstrap addon. -->
 		<em:bootstrap>true</em:bootstrap>
-
-		<!-- Targeted applications -->
+		
+		<!-- Firefox -->
 		<em:targetApplication>
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
@@ -27,7 +27,15 @@
 				<em:maxVersion>54.*</em:maxVersion>
 			</Description>
 		</em:targetApplication>
-
+		
+		<!-- Palemoon -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
+				<em:minVersion>27.0</em:minVersion>
+				<em:maxVersion>27.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
 	</Description>
 </RDF>
 
