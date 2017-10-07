@@ -54,121 +54,129 @@
 				type="int" />
 		</preferences>
 		
-		<groupbox orient="vertical">
-			<caption label="Bar" />
-			
-			<hbox align="horizontal">
-				<label control="height" value="Height: " />
-				<spacer flex="1" />
-				<tooltip id="tabsHeightTooltip">
-					<label value="Defines the height of the tabs." />
-					<label value="If the icon is squeezed, you'll have to decrease the bottom padding." />
-					<label value="Default value: 24" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" preference="heightPreference" id="height" tooltip="tabsHeightTooltip" />
-			</hbox>
-			
-			<hbox align="horizontal">
-				<label control="height" value="Padding top: " />
-				<spacer flex="1" />
-				<tooltip id="paddingTopTooltip">
-					<label value="Defines the amount of padding between the items and the top." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="paddingTopPreference" id="paddingTop" tooltip="paddingTopTooltip" />
-			</hbox>
-			
-			<hbox align="horizontal">
-				<label control="height" value="Padding bottom: " />
-				<spacer flex="1" />
-				<tooltip id="paddingBottomTooltip">
-					<label value="Defines the amount of padding between the items and the bottom." />
-					<label value="This option might or might not work depending on your platform." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="paddingBottomPreference" id="paddingBottom" tooltip="paddingBottomTooltip" />
-			</hbox>
-		</groupbox>
-		
-		<groupbox orient="vertical">
-			<caption label="Items" />
-			
-			<hbox align="horizontal">
-				<label control="paddingBetweenItems" value="Padding between items: " />
-				<spacer flex="1" />
-				<tooltip id="paddingBetweenItemsTooltip">
-					<label value="Defines the padding between items on the bookmarks bar." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="paddingBetweenItemsPreference" id="paddingBetweenItems" tooltip="paddingBetweenItemsTooltip" />
-			</hbox>
-		</groupbox>
-		
-		<groupbox orient="vertical">
-			<caption label="Bookmark Item" />
-			
-			<hbox align="horizontal">
-				<label control="itemsIconPaddingTop" value="Icon padding top: " />
-				<spacer flex="1" />
-				<tooltip id="itemsIconPaddingTopTooltip">
-					<label value="Defines how much space is between the icon and the top edge." />
-					<label value="If you increase this value, it might happen that the icon is queezed, in that case you need to decrease the bottom padding." />
-					<label value="Default value: -7" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="itemsIconPaddingTopPreference" id="itemsIconPaddingTop" tooltip="itemsIconPaddingTopTooltip" />
-			</hbox>
-			<hbox align="horizontal">
-				<label control="itemsIconPaddingBottom" value="Icon padding bottom: " />
-				<spacer flex="1" />
-				<tooltip id="itemsIconPaddingBottomTooltip">
-					<label value="Defines how much space is between the icon and the bottom edge." />
-					<label value="If the icon of the bookmarks is squeezed, you need to decrease this value." />
-					<label value="Default value: -7" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="itemsIconPaddingBottomPreference" id="itemsIconPaddingBottom" tooltip="itemsIconPaddingBottomTooltip" />
-			</hbox>
-			<hbox align="horizontal">
-				<label control="itemsTextPaddingTop" value="Text padding top: " />
-				<spacer flex="1" />
-				<tooltip id="itemsTextPaddingTopTooltip">
-					<label value="Defines how much space is between the text/sitename and the top edge." />
-					<label value="Default value: -1" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="-99999999" preference="itemsTextPaddingTopPreference" id="itemsTextPaddingTop" tooltip="itemsTextPaddingTopTooltip" />
-			</hbox>
-		</groupbox>
-		
-		<groupbox orient="vertical">
-			<caption label="Bookmarks" />
-			
-			<checkbox preference="bookmarksIconHidePreference" id="bookmarksIconHide" label="Hide icon" tooltiptext="Removes the page/site icon from the bookmark in the bar." />
-			<checkbox preference="bookmarksTextHidePreference" id="bookmarksTextHide" label="Hide name" tooltiptext="Removes the page/site name from the bookmark in the bar." />
-		</groupbox>
-		
-		<groupbox orient="vertical">
-			<caption label="Folders" />
-			
-			<checkbox preference="foldersIconHidePreference" id="foldersIconHide" label="Hide icon" tooltiptext="Removes the folder icon." />
-			<checkbox preference="foldersTextHidePreference" id="foldersTextHide" label="Hide text" tooltiptext="Removes the folder name." />
-			<checkbox preference="foldersDropdownHidePreference" id="foldersDropdownHide" label="Hide dropdown icon" tooltiptext="Removes the page/site icon from the tabs." />
-		</groupbox>
-		
-		<groupbox orient="vertical">
-			<caption label="Dropdown" />
-			
-			<checkbox preference="dropdownScrollbarPreference" id="dropdownScrollbar" label="Scrollbars"
-				tooltiptext="Replaces the up/down buttons with a scrollbar in the dropdown of a bookmark folder." />
-			<checkbox preference="dropdownHideOpenAllInTabsPreference" id="dropdownHideallintabs" label="Hide 'Open All in Tabs' entry"
-				tooltiptext="Hides the 'Open All in Tabs' entry." />
-			<hbox align="horizontal">
-				<label control="dropdownMinimumWidth" value="Minimum width: " />
-				<spacer flex="1" />
-				<tooltip id="dropdownMinimumWidthTooltip">
-					<label value="The minimum width for the dropdown of a bookmarks folder." />
-					<label value="Default value: 0" style="font-weight: bold;" />
-				</tooltip>
-				<textbox type="number" increment="1" min="0" preference="dropdownMinimumWidthPreference" id="dropdownMinimumWidth" tooltip="dropdownMinimumWidthTooltip" />
-			</hbox>
-		</groupbox>
+		<tabbox>
+			<tabs>
+				<tab label="Bar" />
+				<tab label="Items" />
+				<tab label="Dropdown" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<vbox>
+						<hbox align="horizontal">
+							<label control="height" value="Height: " />
+							<spacer flex="1" />
+							<tooltip id="tabsHeightTooltip">
+								<label value="Defines the height of the tabs." />
+								<label value="If the icon is squeezed, you'll have to decrease the bottom padding." />
+								<label value="Default value: 24" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" preference="heightPreference" id="height" tooltip="tabsHeightTooltip" />
+						</hbox>
+						
+						<hbox align="horizontal">
+							<label control="height" value="Padding top: " />
+							<spacer flex="1" />
+							<tooltip id="paddingTopTooltip">
+								<label value="Defines the amount of padding between the items and the top." />
+								<label value="Default value: 0" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="-99999999" preference="paddingTopPreference" id="paddingTop" tooltip="paddingTopTooltip" />
+						</hbox>
+						
+						<hbox align="horizontal">
+							<label control="height" value="Padding bottom: " />
+							<spacer flex="1" />
+							<tooltip id="paddingBottomTooltip">
+								<label value="Defines the amount of padding between the items and the bottom." />
+								<label value="This option might or might not work depending on your platform." />
+								<label value="Default value: 0" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="-99999999" preference="paddingBottomPreference" id="paddingBottom" tooltip="paddingBottomTooltip" />
+						</hbox>
+						
+						<hbox align="horizontal">
+							<label control="paddingBetweenItems" value="Padding between items: " />
+							<spacer flex="1" />
+							<tooltip id="paddingBetweenItemsTooltip">
+								<label value="Defines the padding between items on the bookmarks bar." />
+								<label value="Default value: 0" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="-99999999" preference="paddingBetweenItemsPreference" id="paddingBetweenItems" tooltip="paddingBetweenItemsTooltip" />
+						</hbox>
+					</vbox>
+				</tabpanel>
+				
+				<tabpanel>
+					<vbox>
+						<hbox align="horizontal">
+							<label control="itemsIconPaddingTop" value="Icon padding top: " />
+							<spacer flex="1" />
+							<tooltip id="itemsIconPaddingTopTooltip">
+								<label value="Defines how much space is between the icon and the top edge." />
+								<label value="If you increase this value, it might happen that the icon is queezed, in that case you need to decrease the bottom padding." />
+								<label value="Default value: -7" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="-99999999" preference="itemsIconPaddingTopPreference" id="itemsIconPaddingTop" tooltip="itemsIconPaddingTopTooltip" />
+						</hbox>
+						
+						<hbox align="horizontal">
+							<label control="itemsIconPaddingBottom" value="Icon padding bottom: " />
+							<spacer flex="1" />
+							<tooltip id="itemsIconPaddingBottomTooltip">
+								<label value="Defines how much space is between the icon and the bottom edge." />
+								<label value="If the icon of the bookmarks is squeezed, you need to decrease this value." />
+								<label value="Default value: -7" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="-99999999" preference="itemsIconPaddingBottomPreference" id="itemsIconPaddingBottom" tooltip="itemsIconPaddingBottomTooltip" />
+						</hbox>
+						
+						<hbox align="horizontal">
+							<label control="itemsTextPaddingTop" value="Text padding top: " />
+							<spacer flex="1" />
+							<tooltip id="itemsTextPaddingTopTooltip">
+								<label value="Defines how much space is between the text/sitename and the top edge." />
+								<label value="Default value: -1" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="-99999999" preference="itemsTextPaddingTopPreference" id="itemsTextPaddingTop" tooltip="itemsTextPaddingTopTooltip" />
+						</hbox>
+						
+						<groupbox orient="vertical">
+							<caption label="Bookmarks" />
+							
+							<checkbox preference="bookmarksIconHidePreference" id="bookmarksIconHide" label="Hide icon" tooltiptext="Removes the page/site icon from the bookmark in the bar." />
+							<checkbox preference="bookmarksTextHidePreference" id="bookmarksTextHide" label="Hide name" tooltiptext="Removes the page/site name from the bookmark in the bar." />
+						</groupbox>
+						
+						<groupbox orient="vertical">
+							<caption label="Folders" />
+							
+							<checkbox preference="foldersIconHidePreference" id="foldersIconHide" label="Hide icon" tooltiptext="Removes the folder icon." />
+							<checkbox preference="foldersTextHidePreference" id="foldersTextHide" label="Hide text" tooltiptext="Removes the folder name." />
+							<checkbox preference="foldersDropdownHidePreference" id="foldersDropdownHide" label="Hide dropdown icon" tooltiptext="Removes the page/site icon from the tabs." />
+						</groupbox>
+					</vbox>
+				</tabpanel>
+				
+				<tabpanel>
+					<vbox>
+						<checkbox preference="dropdownScrollbarPreference" id="dropdownScrollbar" label="Scrollbars"
+							tooltiptext="Replaces the up/down buttons with a scrollbar in the dropdown of a bookmark folder." />
+						<checkbox preference="dropdownHideOpenAllInTabsPreference" id="dropdownHideallintabs" label="Hide 'Open All in Tabs' entry"
+							tooltiptext="Hides the 'Open All in Tabs' entry." />
+						<hbox align="horizontal">
+							<label control="dropdownMinimumWidth" value="Minimum width: " />
+							<spacer flex="1" />
+							<tooltip id="dropdownMinimumWidthTooltip">
+								<label value="The minimum width for the dropdown of a bookmarks folder." />
+								<label value="Default value: 0" style="font-weight: bold;" />
+							</tooltip>
+							<textbox type="number" increment="1" min="0" preference="dropdownMinimumWidthPreference" id="dropdownMinimumWidth" tooltip="dropdownMinimumWidthTooltip" />
+						</hbox>
+					</vbox>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
 	</prefpane>
+	
 </prefwindow>
