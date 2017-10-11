@@ -2,6 +2,16 @@ Changelog
 =========
 
 
+1.4
+---
+
+ * #2 The icon is no longer fetched from AMO.
+ * #3 Added Palemoon as target application.
+ * The preferences are now tabbed.
+ * Fixed that padding bottom did nothing.
+ * Fixed that the chevron would be too big.
+
+
 1.3
 ---
 
